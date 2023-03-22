@@ -294,6 +294,7 @@ SWIFT_CLASS("_TtC7WaboMax7WaboMax")
 - (void)showBannerAdTop;
 - (void)showBannerAdWithPosition:(NSString * _Nonnull)posInfo;
 - (void)showAppopenAdWithTimeout:(float)timeout;
+- (WaboBridgeResult * _Nonnull)getLoadingStatusSummary SWIFT_WARN_UNUSED_RESULT;
 - (void)setWaboMaxInitDelegate:(void (^ _Nonnull)(id _Nullable))delegate;
 - (void)setWaboMaxAppopenAdDelegate:(void (^ _Nonnull)(id _Nullable))delegate;
 - (void)setWaboMaxRewardedAdDelegate:(void (^ _Nonnull)(id _Nullable))delegate;
