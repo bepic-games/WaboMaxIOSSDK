@@ -1,7 +1,7 @@
 framework module WaboMax {
   umbrella header "WaboMax.h"
-
   export *
+
   module * { export * }
 }
 
