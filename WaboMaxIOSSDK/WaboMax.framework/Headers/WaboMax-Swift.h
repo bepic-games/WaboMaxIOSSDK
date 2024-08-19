@@ -302,6 +302,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class WaboBridgeResult;
 @class NSString;
 @class WaboStaticInfo;
+@class UIView;
 
 /// Max Module
 SWIFT_CLASS("_TtC7WaboMax7WaboMax")
@@ -322,6 +323,7 @@ SWIFT_CLASS("_TtC7WaboMax7WaboMax")
 /// returns:
 /// version of third party
 - (WaboBridgeResult * _Nonnull)sdkVersion SWIFT_WARN_UNUSED_RESULT;
+- (void)setBannerCustomMode:(NSString * _Nonnull)bannerCustomMode;
 /// init  sdk with json
 /// \param jsonString json data
 ///
@@ -335,10 +337,16 @@ SWIFT_CLASS("_TtC7WaboMax7WaboMax")
 - (void)showRewardedAd:(NSString * _Nullable)placementId;
 - (WaboBridgeResult * _Nonnull)isInterstitialAdReady:(NSString * _Nullable)placementId SWIFT_WARN_UNUSED_RESULT;
 - (void)showInterstitialAd:(NSString * _Nullable)placementId;
+- (WaboBridgeResult * _Nonnull)getBannerSize SWIFT_WARN_UNUSED_RESULT;
+- (UIView * _Nullable)createBanner SWIFT_WARN_UNUSED_RESULT;
+- (void)destroyBanner;
 - (WaboBridgeResult * _Nonnull)isBannerAdReady SWIFT_WARN_UNUSED_RESULT;
 - (void)showBannerAd;
 - (void)hideBannerAd;
 - (void)showBannerAdTop;
+- (void)showBannerAdBottom;
+- (void)showBannerAdTopOfSafe;
+- (void)showBannerAdBottomOfSafe;
 - (void)showBannerAdWithPosition:(NSString * _Nonnull)posInfo;
 - (void)showAppopenAdWithTimeout:(float)timeout;
 - (WaboBridgeResult * _Nonnull)getLoadingStatusSummary SWIFT_WARN_UNUSED_RESULT;
