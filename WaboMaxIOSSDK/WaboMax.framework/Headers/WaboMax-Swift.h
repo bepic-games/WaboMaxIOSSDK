@@ -303,6 +303,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class NSString;
 @class WaboStaticInfo;
 @class UIView;
+@class WaboNativeAdBinder;
 
 /// Max Module
 SWIFT_CLASS("_TtC7WaboMax7WaboMax")
@@ -349,6 +350,10 @@ SWIFT_CLASS("_TtC7WaboMax7WaboMax")
 - (void)showBannerAdBottomOfSafe;
 - (void)showBannerAdWithPosition:(NSString * _Nonnull)posInfo;
 - (void)showAppopenAdWithTimeout:(float)timeout;
+- (void)showSmallNativeAd:(void (^ _Nonnull)(id _Nullable))delegate;
+- (void)showMediumNativeAd:(void (^ _Nonnull)(id _Nullable))delegate;
+- (void)showManualNativeAd:(WaboNativeAdBinder * _Nonnull)nativeAdBinder :(void (^ _Nonnull)(id _Nullable))delegate;
+- (void)destroyNativeAdView:(UIView * _Nonnull)view;
 - (WaboBridgeResult * _Nonnull)getLoadingStatusSummary SWIFT_WARN_UNUSED_RESULT;
 - (void)setWaboMaxInitDelegate:(void (^ _Nonnull)(id _Nullable))delegate;
 - (void)setWaboMaxAppopenAdDelegate:(void (^ _Nonnull)(id _Nullable))delegate;
@@ -397,6 +402,25 @@ SWIFT_CLASS("_TtC7WaboMax30WaboMaxInterstitialAdvertising")
 - (void)didHideAd:(MAAd * _Nonnull)ad;
 - (void)didClickAd:(MAAd * _Nonnull)ad;
 - (void)didFailToDisplayAd:(MAAd * _Nonnull)ad withError:(MAError * _Nonnull)error;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC7WaboMax23WaboMaxNativeAdverising")
+@interface WaboMaxNativeAdverising : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+@class MANativeAdView;
+
+SWIFT_CLASS("_TtC7WaboMax36WaboMaxNativeAdverisingInnerDelegate")
+@interface WaboMaxNativeAdverisingInnerDelegate : NSObject <MAAdRevenueDelegate, MANativeAdDelegate>
+- (void)didLoadNativeAd:(MANativeAdView * _Nullable)nativeAdView forAd:(MAAd * _Nonnull)ad;
+- (void)didFailToLoadNativeAdForAdUnitIdentifier:(NSString * _Nonnull)adUnitIdentifier withError:(MAError * _Nonnull)error;
+- (void)didClickNativeAd:(MAAd * _Nonnull)ad;
+- (void)didPayRevenueForAd:(MAAd * _Nonnull)ad;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
