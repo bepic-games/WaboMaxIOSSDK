@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name = "WaboMaxIOSSDK"
-  spec.version="0.1.42"
+  spec.version="0.1.43"
   spec.summary = "Wabo SDK Max sdk"
   spec.description= <<-DESC
   Wabo SDK for Max
@@ -15,7 +15,7 @@ Pod::Spec.new do |spec|
   spec.public_header_files = 'WaboMaxIOSSDK/*.{framework}/Headers/*.h'
   spec.pod_target_xcconfig = { 'VALID_ARCHS' => 'arm64' }
   spec.swift_version = '5.0'
-  spec.dependency 'AppLovinSDK', '12.4.2'
+  spec.dependency 'AppLovinSDK', '12.6.0'
   #spec.dependency 'AppLovinMediationAdColonyAdapter', '4.9.0.0.2'
   #spec.dependency 'AppLovinMediationByteDanceAdapter', '4.8.1.0.2'
   #spec.dependency 'AppLovinMediationFacebookAdapter', '6.12.0.1'
