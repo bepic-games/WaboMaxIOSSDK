@@ -302,6 +302,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @class WaboBridgeResult;
 @class NSString;
 @class WaboStaticInfo;
+@class UIColor;
 @class UIView;
 @class WaboNativeAdBinder;
 
@@ -338,6 +339,7 @@ SWIFT_CLASS("_TtC7WaboMax7WaboMax")
 - (void)showRewardedAd:(NSString * _Nullable)placementId;
 - (WaboBridgeResult * _Nonnull)isInterstitialAdReady:(NSString * _Nullable)placementId SWIFT_WARN_UNUSED_RESULT;
 - (void)showInterstitialAd:(NSString * _Nullable)placementId;
+- (void)setBannerBackgroundColor:(UIColor * _Nonnull)color;
 - (WaboBridgeResult * _Nonnull)getBannerSize SWIFT_WARN_UNUSED_RESULT;
 - (UIView * _Nullable)createBanner SWIFT_WARN_UNUSED_RESULT;
 - (void)destroyBanner;
